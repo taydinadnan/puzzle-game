@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_countdown_timer/current_remaining_time.dart';
 import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
@@ -7,6 +6,8 @@ import '../widgets/answer_input.dart';
 import '../models/puzzle_model.dart';
 
 class PuzzleGameScreen extends StatefulWidget {
+  const PuzzleGameScreen({super.key});
+
   @override
   _PuzzleGameScreenState createState() => _PuzzleGameScreenState();
 }

@@ -7,8 +7,8 @@ class AnswerInput extends StatefulWidget {
   AnswerInput({
     required this.correctAnswer,
     required this.onAnswerSubmitted,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   AnswerInputState createState() => AnswerInputState();
@@ -60,8 +60,8 @@ class AnswerInputState extends State<AnswerInput> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('Enter the word:', style: TextStyle(fontSize: 18)),
-        SizedBox(height: 10),
+        const Text('Enter the word:', style: TextStyle(fontSize: 18)),
+        const SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: List.generate(widget.correctAnswer.length, (index) {
@@ -79,7 +79,7 @@ class AnswerInputState extends State<AnswerInput> {
                   },
                   decoration: InputDecoration(
                     counterText: '',
-                    border: OutlineInputBorder(),
+                    border: const OutlineInputBorder(),
                     filled: true,
                     fillColor: _getBoxColor(index),
                   ),
@@ -96,7 +96,7 @@ class AnswerInputState extends State<AnswerInput> {
     String? userAnswer = controllers[index].text;
     String correctAnswerLetter = widget.correctAnswer[index].toLowerCase();
 
-    if (userAnswer == null || userAnswer.isEmpty) {
+    if (userAnswer.isEmpty) {
       return Colors.white; // Default color for empty box
     } else if (userAnswer == correctAnswerLetter) {
       return Colors.green; // Green for correct answer
