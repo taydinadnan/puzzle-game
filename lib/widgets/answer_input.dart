@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class AnswerInput extends StatefulWidget {
-  String correctAnswer;
+  final String correctAnswer;
   final Function(bool) onAnswerSubmitted;
 
   AnswerInput({
     required this.correctAnswer,
     required this.onAnswerSubmitted,
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   AnswerInputState createState() => AnswerInputState();
@@ -35,7 +35,6 @@ class AnswerInputState extends State<AnswerInput> {
 
   void updateInputState(String newCorrectAnswer) {
     setState(() {
-      widget.correctAnswer = newCorrectAnswer;
       resetInputState();
     });
   }
@@ -93,7 +92,7 @@ class AnswerInputState extends State<AnswerInput> {
   }
 
   Color _getBoxColor(int index) {
-    String? userAnswer = controllers[index].text;
+    String userAnswer = controllers[index].text;
     String correctAnswerLetter = widget.correctAnswer[index].toLowerCase();
 
     if (userAnswer.isEmpty) {
