@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   flutter_svg: ^2.0.10+1
   flutter_countdown_timer: ^4.1.0
+  shared_preferences: ^2.0.0
   
 
 dev_dependencies:
