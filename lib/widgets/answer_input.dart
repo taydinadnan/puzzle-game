@@ -59,7 +59,8 @@ class AnswerInputState extends State<AnswerInput> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text('Enter the word:', style: TextStyle(fontSize: 18)),
+        const Text('What is this animal called in Swedish:',
+            style: TextStyle(fontSize: 18)),
         const SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
